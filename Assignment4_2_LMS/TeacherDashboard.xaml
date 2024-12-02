@@ -13,17 +13,26 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
-            <TextBox x:Name="txtStudentId" Text="Student ID"  Width="100" Margin="5" />
-            <TextBox x:Name="txtStudentName" Text="Student Name" Width="200" Margin="5" />
-            <TextBox x:Name="txtGPA" Text="GPA" Width="50" Margin="5" />
-            <Button x:Name="btnAddStudent" Content="Add Student" Click="btnAddStudent_Click" Margin="5" />
+        <StackPanel Grid.Row="0" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="Student ID:" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtStudentId" Width="100" Margin="5" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="Full Name: " VerticalAlignment="Center"/>
+                <TextBox x:Name="txtStudentName" Width="150" Margin="5" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="GPA:          " VerticalAlignment="Center"/>
+                <TextBox x:Name="txtGPA" Width="50" Margin="5" />
+            </StackPanel>
+            <Button x:Name="btnAddStudent" Content="Add Student" Click="btnAddStudent_Click" Width="80" HorizontalAlignment="Left" Margin="5" />
         </StackPanel>
 
         <DataGrid x:Name="dataGridStudents" Grid.Row="1" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Student ID" Binding="{Binding StudentId}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Student Name" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="GPA" Binding="{Binding GPA}" />
             </DataGrid.Columns>
         </DataGrid>
